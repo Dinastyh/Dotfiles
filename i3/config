@@ -37,8 +37,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # Bind for light screen
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight +5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -5 # decrease screen brightness
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -118,7 +118,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9:Discord"
-set $ws10 "10:Teams"
+set $ws10 "10:Spotify"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -190,16 +190,27 @@ exec_always /usr/bin/feh --bg-scale /home/dinasty/Pictures/background.png
 exec_always --no-startup-id picom"
 
 # Keybinding for i3Lock
-bindsym $mod+x exec i3lock
+bindsym $mod+x exec i3lock -u -t -i /home/dinasty/Downloads/i3lock.png
 
-# Keybinding for Spotify
+# Keybinding for Discord
 bindsym $mod+p exec discord
 
+# Keybinding for Spotify
+bindsym $mod+Shift+m exec spotify
+
 # Assign task to WorkSpace
-for_window [class="teams"] move to workspace $ws10
+for_window [class="spotify"] move to workspace $ws10
 for_window [class="discord"] move to workspace $ws9
 # Window Compositor
 #exec_always picom -fC --no-fading-openclose
 
 # Keybinding for Firefox
 bindsym $mod+y exec firefox
+
+# Keybinding for switch map
+bindsym $mod+Shift+i exec setxkbmap us_intl
+bindsym $mod+Shift+u exec setxkbmap us
+
+new_window 1pixel
+
+bindsym $mod+c exec code
