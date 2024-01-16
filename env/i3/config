@@ -31,11 +31,10 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # Bind for light screen
 bindsym XF86MonBrightnessUp exec xbacklight +5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -5 # decrease screen brightness
@@ -45,7 +44,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -5 # decrease screen brightness
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -185,9 +184,13 @@ bar {
 }
 
 # Display Wallpaper
-exec_always /usr/bin/feh --bg-scale /home/dinasty/Pictures/background.png
+exec_always /usr/bin/feh --bg-scale /home/dinasty/Pictures/background.jpg
+
+# Notification
+exec --no-startup-id dunst
+
 # Set opacity
-exec_always --no-startup-id picom"
+exec_always --no-startup-id picom
 
 # Keybinding for i3Lock
 bindsym $mod+x exec i3lock -u -t -i /home/dinasty/Downloads/i3lock.png
@@ -197,6 +200,9 @@ bindsym $mod+p exec discord
 
 # Keybinding for Spotify
 bindsym $mod+Shift+m exec spotify
+
+# Keybinding to execute flameshot
+bindsym Print exec flameshot gui
 
 # Assign task to WorkSpace
 for_window [class="spotify"] move to workspace $ws10
