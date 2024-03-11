@@ -184,7 +184,7 @@ bar {
 }
 
 # Display Wallpaper
-exec_always /usr/bin/feh --bg-scale /home/dinasty/Pictures/background.jpg
+exec_always /usr/bin/feh --bg-scale /home/dinasty/Pictures/wallpaper.png
 
 # Notification
 exec --no-startup-id dunst
