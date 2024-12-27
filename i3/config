@@ -18,7 +18,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -5 # decrease screen brightness
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id kitty
+bindsym $mod+Return exec --no-startup-id ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -180,7 +180,7 @@ for_window [class="discord"] move to workspace $ws10
 # Window Compositor
 #exec_always picom -fC --no-fading-openclose
 
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel
 
 # Keybinding for Firefox
 bindsym $mod+y exec firefox
