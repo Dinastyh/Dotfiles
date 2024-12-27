@@ -27,6 +27,7 @@ ln -s "$START_PATH/kitty/" .
 ln -s "$START_PATH/nvim/" .
 ln -s "$START_PATH/picom/" .
 ln -s "$START_PATH/zellij/" .
+ln -s "$START_PATH/ghostty/" .
 
 cd ~/
 
