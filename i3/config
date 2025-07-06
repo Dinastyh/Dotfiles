@@ -163,6 +163,10 @@ exec_always /usr/bin/feh --bg-fill ~/Pictures/wallpaper.jpg
 # Notification
 exec --no-startup-id dunst
 
+# SafeEyes
+exec_always --no-startup-id snixembed --fork
+exec_always --no-startup-id safeeyes
+
 # Set opacity
 exec_always --no-startup-id picom
 
@@ -182,5 +186,5 @@ for_window [class="discord"] move to workspace $ws10
 
 for_window [class="^.*"] border pixel
 
-# Keybinding for Firefox
-bindsym $mod+y exec firefox
+# Keybinding for LibreWolf
+bindsym $mod+y exec librewolf

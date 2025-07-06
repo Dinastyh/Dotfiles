@@ -2,5 +2,5 @@ font-family = "FiraCode Nerd Font"
 font-feature = "FiraCode Nerd Font +zero +liga"
 
 window-decoration = false
-confirm-close-surface=false
+confirm-close-surface = false
 background-opacity = 0.9

@@ -9,7 +9,7 @@ return {
       "zls",
       "clang-format",
       "stylua",
-      "rust_analyzer",
+      "rust-analyzer",
     },
   },
 }
